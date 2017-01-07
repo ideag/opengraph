@@ -18,7 +18,7 @@
    
 */
 
-class OpenGraph implements Iterator
+class tiny_OpenGraph implements Iterator
 {
   /**
    * There are base schema's based on type, this is just
@@ -71,6 +71,17 @@ class OpenGraph implements Iterator
         }
 	}
 
+  /**
+   * Parses HTML and extracts Open Graph data, this assumes
+   * the document is at least well formed.
+   *
+   * @param $HTML    HTML to parse
+   * @return OpenGraph
+   */
+	static public function parse( $html ) {
+	    return self::_parse( $html );
+	}
+	
   /**
    * Parses HTML and extracts Open Graph data, this assumes
    * the document is at least well formed.
